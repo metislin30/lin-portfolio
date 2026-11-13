@@ -4,9 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="林怡伶的個人網站。收錄電商經驗、AI 創作、英語短片與視覺作品。">
-  <meta name="theme-color" content="#f7f5ef">
+  <meta name="theme-color" content="#f5ede2">
   <title>林怡伶｜個人作品集</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="rally.css">
+  <script src="rally.js" defer></script>
 </head>
 <body id="top">
   <a class="skip" href="#main">跳到主要內容</a>
@@ -15,22 +17,33 @@
     <nav aria-label="主選單"><a href="#work">作品</a><a href="#writing">文章</a><a href="#about">關於我</a></nav>
   </header>
   <main id="main">
-    <section class="hero page" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">電商實務 · AI 創作 · 視覺設計</p>
-        <h1 id="hero-title">林怡伶<span>個人作品集</span></h1>
-        <p class="intro">我從電商工作開始，做過商品圖、網頁和內容。現在也把 AI 用在分鏡、影片與日常工作流程，記下實際試過的方法。</p>
-        <a class="button" href="#work">瀏覽作品 <span aria-hidden="true">↓</span></a>
+    <section class="rally page" aria-labelledby="hero-title">
+      <div class="rally-intro">
+        <div><p class="eyebrow">電商實務 · AI 創作 · 視覺設計</p><h1 id="hero-title">林怡伶的<span>作品小島</span></h1></div>
+        <div class="rally-intro-side"><p>開著小車逛作品，也可以直接點選地圖上的站牌。</p><a href="#work">直接瀏覽作品 <span aria-hidden="true">↓</span></a></div>
       </div>
-      <div class="hero-art">
-        <figure class="hero-picture"><img src="assets/commerce.jpg" alt="左右分鏡對照：角色在桌上型電腦旁使用 Illustrator，另一幕在筆電前使用生成式 AI" width="1280" height="720"><figcaption>《我的電商辦公室應用進化史》開場分鏡</figcaption></figure>
-        <span class="art-spark" aria-hidden="true">✳</span>
+      <div class="rally-stage" id="rally-stage">
+        <canvas id="rally-map" aria-hidden="true"></canvas>
+        <div class="rally-stops" aria-label="地圖上的作品">
+          <a class="stop" data-stop="commerce" href="#commerce">電商分鏡 <span aria-hidden="true">↗</span></a>
+          <a class="stop" data-stop="english" href="#english">英語短片 <span aria-hidden="true">↗</span></a>
+          <a class="stop" data-stop="retouch" href="#retouch">商品精修 <span aria-hidden="true">↗</span></a>
+          <a class="stop" data-stop="writing" href="#writing">AI 筆記 <span aria-hidden="true">↗</span></a>
+        </div>
+        <button type="button" class="reset-car" id="reset-car" hidden>↺ 回起點</button>
+        <div class="rally-pad" aria-label="小車方向控制" hidden>
+          <button type="button" data-drive="up" aria-label="前進">↑</button>
+          <button type="button" data-drive="left" aria-label="左轉">←</button>
+          <button type="button" data-drive="down" aria-label="倒車">↓</button>
+          <button type="button" data-drive="right" aria-label="右轉">→</button>
+        </div>
       </div>
+      <p class="rally-help" hidden>方向鍵或 WASD 開車，靠近站牌按 Enter 看作品。手機可用畫面上的方向鍵。</p>
     </section>
 
     <section class="work page" id="work" aria-labelledby="work-title">
       <div class="section-head"><h2 id="work-title">精選作品</h2></div>
-      <article class="feature">
+      <article class="feature" id="commerce">
         <img class="feature-image" src="assets/workflow.jpg" alt="角色指向工作流程分鏡：從筆記、資料整理到影像製作" width="1280" height="720" loading="lazy">
         <div class="feature-copy">
           <p class="eyebrow">電商 × AI</p>
@@ -40,13 +53,13 @@
         </div>
       </article>
       <div class="work-grid">
-        <article class="project">
+        <article class="project" id="english">
           <div class="project-cover english-cover"><img src="assets/english.jpg" alt="英語 CHUNK 短片插畫：人物提著包走出家門" width="450" height="800" loading="lazy"></div>
           <div class="project-copy"><p class="eyebrow">英語學習短片</p><h3>英語 CHUNK</h3><p>把出門準備、通勤這類日常情境，做成可以跟著練習的英語短片。</p>
             <details><summary>播放通勤篇</summary><div class="expanded"><video controls preload="none" playsinline poster="assets/english.jpg" aria-label="英語 CHUNK 通勤篇" src="assets/english.mp4"></video></div></details>
           </div>
         </article>
-        <article class="project">
+        <article class="project" id="retouch">
           <div class="project-cover retouch-cover"><img src="assets/retouch.jpg" alt="手環商品照片的精修前後對照" width="595" height="842" loading="lazy"></div>
           <div class="project-copy"><p class="eyebrow">視覺設計</p><h3>商品影像精修</h3><p>用前後對照呈現飾品與保養品的修圖處理，觀察背景、光線與材質細節的差異。</p>
             <details><summary>看精修前後對照</summary><div class="expanded gallery"><figure><img src="assets/retouch.jpg" alt="手環精修前後對照" width="595" height="842" loading="lazy"><figcaption>飾品</figcaption></figure><figure><img src="assets/skincare.jpg" alt="保養品罐身精修前後對照" width="595" height="842" loading="lazy"><figcaption>保養品</figcaption></figure></div></details>

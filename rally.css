@@ -1,0 +1,34 @@
+.rally { padding-block: 36px 26px; }
+.rally-intro { display: flex; align-items: end; justify-content: space-between; gap: 20px 48px; margin-bottom: 19px; }
+.rally-intro h1 { font-size: clamp(35px, 5.4vw, 72px); font-weight: 850; line-height: 1.14; letter-spacing: -.065em; margin-top: 7px; }
+.rally-intro h1 span { color: #6645ae; }
+.rally-intro-side { color: var(--muted); font-size: 14px; padding-bottom: 5px; }
+.rally-intro-side a { display: inline-flex; gap: 8px; margin-top: 4px; color: #50368e; font-weight: 800; text-underline-offset: 4px; }
+.rally-stage { position: relative; min-width: 0; overflow: hidden; border: 1px solid #b7a3d5; border-radius: 20px; background: #c7b7e3; }
+#rally-map { display: none; width: 100%; height: 100%; }
+.rally-stage.ready { height: clamp(390px, 48vw, 610px); }
+.rally-stage.ready #rally-map { display: block; }
+.rally-stops { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; padding: 18px; }
+.ready .rally-stops { position: absolute; inset: 0; display: block; padding: 0; pointer-events: none; }
+.stop, .reset-car, .rally-pad button { color: #2f2549; border: 1px solid #544172; background: #fffbf1; border-radius: 7px; box-shadow: 0 3px 0 #49326160; font: 800 13px/1.2 var(--sans); }
+.stop { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; padding: 9px 10px; text-decoration: none; }
+.ready .stop { position: absolute; transform: translate(-50%, -100%); pointer-events: auto; }
+.stop:hover, .stop.near, .reset-car:hover, .rally-pad button:active { background: #fce18d; }
+.stop span { color: #5d3ea0; }
+.reset-car { position: absolute; right: 14px; top: 14px; padding: 8px 10px; cursor: pointer; }
+.rally-pad { position: absolute; right: 12px; bottom: 13px; display: grid; grid-template-columns: repeat(3, 35px); gap: 4px; touch-action: none; }
+.rally-pad[hidden] { display: none; }
+.rally-pad button { height: 35px; font-size: 19px; cursor: pointer; touch-action: none; }
+.rally-pad button:first-child { grid-column: 2; }
+.rally-pad button:nth-child(2) { grid-column: 1; }
+.rally-help { color: var(--muted); font-size: 13px; margin-top: 8px; }
+article[id] { scroll-margin-top: 20px; }
+@media (max-width: 660px) {
+  .rally { padding-block: 24px 13px; }
+  .rally-intro { display: block; margin-bottom: 12px; }
+  .rally-intro-side { margin-top: 9px; }
+  .rally-stage.ready { height: clamp(345px, 107vw, 470px); border-radius: 13px; }
+  .stop { font-size: 11px; padding: 7px 6px; gap: 3px; }
+  .reset-car { right: 9px; top: 9px; font-size: 12px; }
+  .rally-help { font-size: 12px; }
+}
